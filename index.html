@@ -298,27 +298,50 @@ nav a:hover, nav a.active { color: var(--text); }
 /* ═══ ABOUT ═══ */
 .about-content {
   padding: 48px var(--pad) 80px;
-  max-width: 620px;
+  max-width: 820px;
 }
 
 .about-content h1 {
   font-family: var(--serif);
   font-size: clamp(2rem, 4vw, 3rem);
-  font-weight: 400; margin-bottom: 1.5rem;
+  font-weight: 400; margin-bottom: 2rem;
 }
 
-.about-content p {
+.about-row {
+  display: flex;
+  gap: 40px;
+  align-items: flex-start;
+}
+
+.about-photo {
+  width: 180px;
+  min-width: 180px;
+  border-radius: 6px;
+  overflow: hidden;
+}
+
+.about-photo img {
+  width: 100%;
+  display: block;
+}
+
+.about-text p {
   color: var(--text-dim); font-size: 0.95rem;
   line-height: 1.85; margin-bottom: 1.2rem;
 }
 
-.about-content a {
+.about-text a {
   color: var(--accent); text-decoration: none;
   border-bottom: 1px solid transparent;
   transition: border-color 0.2s;
 }
 
-.about-content a:hover { border-color: var(--accent); }
+.about-text a:hover { border-color: var(--accent); }
+
+@media (max-width: 600px) {
+  .about-row { flex-direction: column; gap: 24px; }
+  .about-photo { width: 140px; min-width: 140px; }
+}
 
 /* ═══ FOOTER ═══ */
 footer {
@@ -368,9 +391,9 @@ footer span { color: var(--text-dim); font-size: 0.76rem; }
   <div class="cat-grid">
 
     <a class="cat-tile" data-goto="cat-characters">
-      <div class="cat-thumb"><img src="images/stefania-avramidi-2024-true-final-presentation.jpg" alt="Characters" style="object-position: center 20%;"></div>
+      <div class="cat-thumb"><img src="images/stefania-avramidi-nurse-tech-sml.webp" alt="Characters" style="object-position: center 20%;"></div>
       <div class="cat-info">
-        <div class="cat-title">Characters</div>
+        <div class="cat-title">Character Design</div>
         <div class="cat-count">7 projects</div>
       </div>
     </a>
@@ -378,13 +401,13 @@ footer span { color: var(--text-dim); font-size: 0.76rem; }
     <a class="cat-tile" data-goto="cat-game-art">
       <div class="cat-thumb"><img src="images/stefania-avramidi-final-s.jpg" alt="Game Art"></div>
       <div class="cat-info">
-        <div class="cat-title">Game Art</div>
+        <div class="cat-title">Mobile Game Art</div>
         <div class="cat-count">2 projects</div>
       </div>
     </a>
 
     <a class="cat-tile" data-goto="cat-props">
-      <div class="cat-thumb"><img src="images/stefania-avramidi-cooler-render.jpg" alt="Props"></div>
+      <div class="cat-thumb"><img src="images/stefania-avramidi-arcade-concept.jpg" alt="Props"></div>
       <div class="cat-info">
         <div class="cat-title">Props</div>
         <div class="cat-count">4 projects</div>
@@ -392,7 +415,7 @@ footer span { color: var(--text-dim); font-size: 0.76rem; }
     </a>
 
     <a class="cat-tile" data-goto="cat-sketches">
-      <div class="cat-thumb"><img src="images/stefania-avramidi-exercise-1-final-copy.jpg" alt="Sketches &amp; Thumbnails"></div>
+      <div class="cat-thumb"><img src="images/stefania-avramidi-tech-arms-stefania-avramidi-small-1.jpg" alt="Sketches &amp; Thumbnails"></div>
       <div class="cat-info">
         <div class="cat-title">Sketches &amp; Thumbnails</div>
         <div class="cat-count">10 pieces</div>
@@ -409,10 +432,10 @@ footer span { color: var(--text-dim); font-size: 0.76rem; }
 <!-- CHARACTERS -->
 <div class="page" id="pg-cat-characters">
   <a class="back-link" data-goto="home"><svg viewBox="0 0 24 24"><polyline points="15 18 9 12 15 6"/></svg>Work</a>
-  <div class="cat-page-header"><h1>Characters</h1></div>
+  <div class="cat-page-header"><h1>Character Design</h1></div>
   <div class="proj-grid">
     <div class="proj-card" data-goto="proj-nurse">
-      <div class="proj-card-thumb"><img src="images/stefania-avramidi-2024-true-final-presentation.jpg" alt="Nurse Tech"></div>
+      <div class="proj-card-thumb"><img src="images/stefania-avramidi-nurse-tech-sml.webp" alt="Nurse Tech"></div>
       <div class="proj-card-info"><div class="proj-card-title">Nurse Tech</div><div class="proj-card-sub">4 images</div></div>
     </div>
     <div class="proj-card" data-goto="proj-magical-girl">
@@ -445,7 +468,7 @@ footer span { color: var(--text-dim); font-size: 0.76rem; }
 <!-- GAME ART -->
 <div class="page" id="pg-cat-game-art">
   <a class="back-link" data-goto="home"><svg viewBox="0 0 24 24"><polyline points="15 18 9 12 15 6"/></svg>Work</a>
-  <div class="cat-page-header"><h1>Game Art</h1></div>
+  <div class="cat-page-header"><h1>Mobile Game Art</h1></div>
   <div class="proj-grid">
     <div class="proj-card" data-goto="proj-firestone-keyart">
       <div class="proj-card-thumb"><img src="images/stefania-avramidi-final-s.jpg" alt="Firestone — Key Art"></div>
@@ -506,11 +529,11 @@ footer span { color: var(--text-dim); font-size: 0.76rem; }
 
 <!-- NURSE TECH -->
 <div class="page" id="pg-proj-nurse" data-parent="cat-characters">
-  <a class="back-link" data-goto="cat-characters"><svg viewBox="0 0 24 24"><polyline points="15 18 9 12 15 6"/></svg>Characters</a>
+  <a class="back-link" data-goto="cat-characters"><svg viewBox="0 0 24 24"><polyline points="15 18 9 12 15 6"/></svg>Character Design</a>
   <div class="proj-header"><h1>Nurse Tech</h1><div class="proj-card-sub">Character Design</div></div>
   <div class="proj-images" data-gallery>
-    <div class="img-wrap" style="animation-delay:0s"><img src="images/stefania-avramidi-2024-true-final-presentation.jpg" alt="Nurse Tech — Final"></div>
-    <div class="img-wrap" style="animation-delay:.08s"><img src="images/stefania-avramidi-nurse-tech-sml.webp" alt="Nurse Tech — Render"></div>
+    <div class="img-wrap" style="animation-delay:0s"><img src="images/stefania-avramidi-nurse-tech-sml.webp" alt="Nurse Tech — Final Render"></div>
+    <div class="img-wrap" style="animation-delay:.08s"><img src="images/stefania-avramidi-2024-true-final-presentation.jpg" alt="Nurse Tech — Flat Colors"></div>
     <div class="img-wrap" style="animation-delay:.16s"><img src="images/stefania-avramidi-color-variations.jpg" alt="Nurse Tech — Color Variations"></div>
     <div class="img-wrap" style="animation-delay:.24s"><img src="images/stefania-avramidi-sketches-final.jpg" alt="Nurse Tech — Sketches"></div>
   </div>
@@ -518,7 +541,7 @@ footer span { color: var(--text-dim); font-size: 0.76rem; }
 
 <!-- MAGICAL GIRL -->
 <div class="page" id="pg-proj-magical-girl" data-parent="cat-characters">
-  <a class="back-link" data-goto="cat-characters"><svg viewBox="0 0 24 24"><polyline points="15 18 9 12 15 6"/></svg>Characters</a>
+  <a class="back-link" data-goto="cat-characters"><svg viewBox="0 0 24 24"><polyline points="15 18 9 12 15 6"/></svg>Character Design</a>
   <div class="proj-header"><h1>Magical Girl</h1><div class="proj-card-sub">Character Design</div></div>
   <div class="proj-images" data-gallery>
     <div class="img-wrap" style="animation-delay:0s"><img src="images/stefania-avramidi-magical-girl-1.webp" alt="Magical Girl — Character Concept"></div>
@@ -528,7 +551,7 @@ footer span { color: var(--text-dim); font-size: 0.76rem; }
 
 <!-- KAITO -->
 <div class="page" id="pg-proj-kaito" data-parent="cat-characters">
-  <a class="back-link" data-goto="cat-characters"><svg viewBox="0 0 24 24"><polyline points="15 18 9 12 15 6"/></svg>Characters</a>
+  <a class="back-link" data-goto="cat-characters"><svg viewBox="0 0 24 24"><polyline points="15 18 9 12 15 6"/></svg>Character Design</a>
   <div class="proj-header"><h1>Kaito</h1><div class="proj-card-sub">Character Design</div></div>
   <div class="proj-images" data-gallery>
     <div class="img-wrap" style="animation-delay:0s"><img src="images/stefania-avramidi-kaito-exploration-small.jpg" alt="Kaito — Exploration"></div>
@@ -538,7 +561,7 @@ footer span { color: var(--text-dim); font-size: 0.76rem; }
 
 <!-- FOX WIZARD -->
 <div class="page" id="pg-proj-fox-wizard" data-parent="cat-characters">
-  <a class="back-link" data-goto="cat-characters"><svg viewBox="0 0 24 24"><polyline points="15 18 9 12 15 6"/></svg>Characters</a>
+  <a class="back-link" data-goto="cat-characters"><svg viewBox="0 0 24 24"><polyline points="15 18 9 12 15 6"/></svg>Character Design</a>
   <div class="proj-header"><h1>Fox Wizard</h1><div class="proj-card-sub">Character Design</div></div>
   <div class="proj-images" data-gallery>
     <div class="img-wrap" style="animation-delay:0s"><img src="images/stefania-avramidi-fox-wizard.jpg" alt="Fox Wizard — Final"></div>
@@ -548,7 +571,7 @@ footer span { color: var(--text-dim); font-size: 0.76rem; }
 
 <!-- IZZY -->
 <div class="page" id="pg-proj-izzy" data-parent="cat-characters">
-  <a class="back-link" data-goto="cat-characters"><svg viewBox="0 0 24 24"><polyline points="15 18 9 12 15 6"/></svg>Characters</a>
+  <a class="back-link" data-goto="cat-characters"><svg viewBox="0 0 24 24"><polyline points="15 18 9 12 15 6"/></svg>Character Design</a>
   <div class="proj-header"><h1>Izzy</h1><div class="proj-card-sub">Character Design</div></div>
   <div class="proj-images" data-gallery>
     <div class="img-wrap" style="animation-delay:0s"><img src="images/stefania-avramidi-izzy-updated.webp" alt="Izzy — Character Design"></div>
@@ -558,7 +581,7 @@ footer span { color: var(--text-dim); font-size: 0.76rem; }
 
 <!-- QUINN -->
 <div class="page" id="pg-proj-quinn" data-parent="cat-characters">
-  <a class="back-link" data-goto="cat-characters"><svg viewBox="0 0 24 24"><polyline points="15 18 9 12 15 6"/></svg>Characters</a>
+  <a class="back-link" data-goto="cat-characters"><svg viewBox="0 0 24 24"><polyline points="15 18 9 12 15 6"/></svg>Character Design</a>
   <div class="proj-header"><h1>Quinn</h1><div class="proj-card-sub">Character Design</div></div>
   <div class="proj-images" data-gallery>
     <div class="img-wrap" style="animation-delay:0s"><img src="images/stefania-avramidi-quinn-stefania-avramidi-small.jpg" alt="Quinn — Character Design"></div>
@@ -567,7 +590,7 @@ footer span { color: var(--text-dim); font-size: 0.76rem; }
 
 <!-- FIRESTONE — KEY ART -->
 <div class="page" id="pg-proj-firestone-keyart" data-parent="cat-game-art">
-  <a class="back-link" data-goto="cat-game-art"><svg viewBox="0 0 24 24"><polyline points="15 18 9 12 15 6"/></svg>Game Art</a>
+  <a class="back-link" data-goto="cat-game-art"><svg viewBox="0 0 24 24"><polyline points="15 18 9 12 15 6"/></svg>Mobile Game Art</a>
   <div class="proj-header"><h1>Firestone — Key Art</h1><div class="proj-card-sub">Illustration</div></div>
   <div class="proj-images" data-gallery>
     <div class="img-wrap" style="animation-delay:0s"><img src="images/stefania-avramidi-final-s.jpg" alt="Firestone — Final Illustration"></div>
@@ -577,7 +600,7 @@ footer span { color: var(--text-dim); font-size: 0.76rem; }
 
 <!-- FIRESTONE — GAME ASSETS -->
 <div class="page" id="pg-proj-firestone-assets" data-parent="cat-game-art">
-  <a class="back-link" data-goto="cat-game-art"><svg viewBox="0 0 24 24"><polyline points="15 18 9 12 15 6"/></svg>Game Art</a>
+  <a class="back-link" data-goto="cat-game-art"><svg viewBox="0 0 24 24"><polyline points="15 18 9 12 15 6"/></svg>Mobile Game Art</a>
   <div class="proj-header"><h1>Firestone — Game Assets</h1><div class="proj-card-sub">Mobile Game Art</div></div>
   <div class="proj-images" data-gallery>
     <div class="img-wrap" style="animation-delay:0s"><img src="images/stefania-avramidi-stefania-avramidi-elementals-copy.jpg" alt="Elemental Characters"></div>
@@ -631,7 +654,7 @@ footer span { color: var(--text-dim); font-size: 0.76rem; }
 
 <!-- GENJI -->
 <div class="page" id="pg-proj-genji" data-parent="cat-characters">
-  <a class="back-link" data-goto="cat-characters"><svg viewBox="0 0 24 24"><polyline points="15 18 9 12 15 6"/></svg>Characters</a>
+  <a class="back-link" data-goto="cat-characters"><svg viewBox="0 0 24 24"><polyline points="15 18 9 12 15 6"/></svg>Character Design</a>
   <div class="proj-header"><h1>Genji — Corrupted Monk</h1><div class="proj-card-sub">Fan Skin Concept</div></div>
   <div class="proj-images" data-gallery>
     <div class="img-wrap" style="animation-delay:0s"><img src="images/stefania-avramidi-final-genji-lower-res.jpg" alt="Genji — Final"></div>
@@ -647,9 +670,16 @@ footer span { color: var(--text-dim); font-size: 0.76rem; }
 <div class="page" id="pg-about">
   <div class="about-content">
     <h1>About</h1>
-    <p>Concept artist and illustrator with a focus on character design, prop design, and game art. Experienced in creating production-ready assets for mobile and indie games, from early thumbnail exploration through to polished final renders.</p>
-    <p>Open to freelance work and studio collaborations.</p>
-    <p><a href="mailto:hello@stefaniaavramidi.com">hello@stefaniaavramidi.com</a></p>
+    <div class="about-row">
+      <div class="about-photo">
+        <img src="images/profile.jpg" alt="Stefania Avramidi">
+      </div>
+      <div class="about-text">
+        <p>Concept artist and illustrator with a focus on character design, prop design, and game art. Experienced in creating production-ready assets for mobile and indie games, from early thumbnail exploration through to polished final renders.</p>
+        <p>Open to freelance work and studio collaborations.</p>
+        <p><a href="mailto:hello@stefaniaavramidi.com">hello@stefaniaavramidi.com</a></p>
+      </div>
+    </div>
   </div>
 </div>
 
@@ -671,15 +701,14 @@ footer span { color: var(--text-dim); font-size: 0.76rem; }
 
 <script>
 (() => {
-  /* ── Navigation ── */
+  /* ── Navigation with browser history ── */
   const pages = document.querySelectorAll('.page');
 
-  function showPage(id) {
+  function showPage(id, pushHistory) {
     pages.forEach(p => p.classList.remove('active'));
     const target = document.getElementById('pg-' + id);
     if (target) target.classList.add('active');
 
-    // header nav highlight
     document.querySelectorAll('nav a').forEach(a => {
       if (a.dataset.goto === 'about') a.classList.toggle('active', id === 'about');
       else a.classList.toggle('active', id !== 'about');
@@ -687,13 +716,33 @@ footer span { color: var(--text-dim); font-size: 0.76rem; }
 
     window.scrollTo({ top: 0, behavior: 'instant' });
 
-    // re-trigger animations
     if (target) {
       target.querySelectorAll('.img-wrap').forEach(w => {
         w.style.animation = 'none'; w.offsetHeight; w.style.animation = '';
       });
     }
+
+    // push to browser history so back/forward works
+    if (pushHistory !== false) {
+      const hash = id === 'home' ? '' : '#' + id;
+      history.pushState({ page: id }, '', hash || window.location.pathname);
+    }
   }
+
+  // handle browser back/forward
+  window.addEventListener('popstate', e => {
+    const id = (e.state && e.state.page) || getPageFromHash() || 'home';
+    showPage(id, false);
+  });
+
+  function getPageFromHash() {
+    const h = window.location.hash.replace('#', '');
+    return h || null;
+  }
+
+  // load correct page on first visit (if URL has a hash)
+  const initialPage = getPageFromHash() || 'home';
+  if (initialPage !== 'home') showPage(initialPage, false);
 
   document.addEventListener('click', e => {
     const el = e.target.closest('[data-goto]');
