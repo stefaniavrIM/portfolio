@@ -368,10 +368,10 @@ footer span { color: var(--text-dim); font-size: 0.76rem; }
   <div class="cat-grid">
 
     <a class="cat-tile" data-goto="cat-characters">
-      <div class="cat-thumb"><img src="images/stefania-avramidi-2024-true-final-presentation.jpg" alt="Characters"></div>
+      <div class="cat-thumb"><img src="images/stefania-avramidi-2024-true-final-presentation.jpg" alt="Characters" style="object-position: center 20%;"></div>
       <div class="cat-info">
         <div class="cat-title">Characters</div>
-        <div class="cat-count">6 projects</div>
+        <div class="cat-count">7 projects</div>
       </div>
     </a>
 
@@ -384,25 +384,17 @@ footer span { color: var(--text-dim); font-size: 0.76rem; }
     </a>
 
     <a class="cat-tile" data-goto="cat-props">
-      <div class="cat-thumb"><img src="images/stefania-avramidi-arcade-concept.jpg" alt="Props"></div>
+      <div class="cat-thumb"><img src="images/stefania-avramidi-cooler-render.jpg" alt="Props"></div>
       <div class="cat-info">
         <div class="cat-title">Props</div>
         <div class="cat-count">4 projects</div>
       </div>
     </a>
 
-    <a class="cat-tile" data-goto="cat-fan-art">
-      <div class="cat-thumb"><img src="images/stefania-avramidi-final-genji-lower-res.jpg" alt="Fan Art"></div>
-      <div class="cat-info">
-        <div class="cat-title">Fan Art</div>
-        <div class="cat-count">1 project</div>
-      </div>
-    </a>
-
     <a class="cat-tile" data-goto="cat-sketches">
-      <div class="cat-thumb"><img src="images/stefania-avramidi-thumbnails-1.jpg" alt="Sketches &amp; Studies"></div>
+      <div class="cat-thumb"><img src="images/stefania-avramidi-exercise-1-final-copy.jpg" alt="Sketches &amp; Thumbnails"></div>
       <div class="cat-info">
-        <div class="cat-title">Sketches &amp; Studies</div>
+        <div class="cat-title">Sketches &amp; Thumbnails</div>
         <div class="cat-count">10 pieces</div>
       </div>
     </a>
@@ -442,6 +434,10 @@ footer span { color: var(--text-dim); font-size: 0.76rem; }
     <div class="proj-card" data-goto="proj-quinn">
       <div class="proj-card-thumb"><img src="images/stefania-avramidi-quinn-stefania-avramidi-small.jpg" alt="Quinn"></div>
       <div class="proj-card-info"><div class="proj-card-title">Quinn</div><div class="proj-card-sub">1 image</div></div>
+    </div>
+    <div class="proj-card" data-goto="proj-genji">
+      <div class="proj-card-thumb"><img src="images/stefania-avramidi-final-genji-lower-res.jpg" alt="Genji — Corrupted Monk"></div>
+      <div class="proj-card-info"><div class="proj-card-title">Genji — Corrupted Monk</div><div class="proj-card-sub">4 images</div></div>
     </div>
   </div>
 </div>
@@ -487,21 +483,10 @@ footer span { color: var(--text-dim); font-size: 0.76rem; }
 </div>
 
 <!-- FAN ART -->
-<div class="page" id="pg-cat-fan-art">
-  <a class="back-link" data-goto="home"><svg viewBox="0 0 24 24"><polyline points="15 18 9 12 15 6"/></svg>Work</a>
-  <div class="cat-page-header"><h1>Fan Art</h1></div>
-  <div class="proj-grid">
-    <div class="proj-card" data-goto="proj-genji">
-      <div class="proj-card-thumb"><img src="images/stefania-avramidi-final-genji-lower-res.jpg" alt="Genji — Corrupted Monk"></div>
-      <div class="proj-card-info"><div class="proj-card-title">Genji — Corrupted Monk</div><div class="proj-card-sub">4 images</div></div>
-    </div>
-  </div>
-</div>
-
 <!-- SKETCHES (no sub-projects, goes straight to stacked images) -->
 <div class="page" id="pg-cat-sketches">
   <a class="back-link" data-goto="home"><svg viewBox="0 0 24 24"><polyline points="15 18 9 12 15 6"/></svg>Work</a>
-  <div class="proj-header"><h1>Sketches &amp; Studies</h1></div>
+  <div class="proj-header"><h1>Sketches &amp; Thumbnails</h1></div>
   <div class="proj-images" data-gallery>
     <div class="img-wrap" style="animation-delay:0s"><img src="images/stefania-avramidi-thumbnails-1.jpg" alt="Character Thumbnails"></div>
     <div class="img-wrap" style="animation-delay:.06s"><img src="images/stefania-avramidi-exercise-1-final-copy.jpg" alt="Design Exercise"></div>
@@ -645,8 +630,8 @@ footer span { color: var(--text-dim); font-size: 0.76rem; }
 </div>
 
 <!-- GENJI -->
-<div class="page" id="pg-proj-genji" data-parent="cat-fan-art">
-  <a class="back-link" data-goto="cat-fan-art"><svg viewBox="0 0 24 24"><polyline points="15 18 9 12 15 6"/></svg>Fan Art</a>
+<div class="page" id="pg-proj-genji" data-parent="cat-characters">
+  <a class="back-link" data-goto="cat-characters"><svg viewBox="0 0 24 24"><polyline points="15 18 9 12 15 6"/></svg>Characters</a>
   <div class="proj-header"><h1>Genji — Corrupted Monk</h1><div class="proj-card-sub">Fan Skin Concept</div></div>
   <div class="proj-images" data-gallery>
     <div class="img-wrap" style="animation-delay:0s"><img src="images/stefania-avramidi-final-genji-lower-res.jpg" alt="Genji — Final"></div>
