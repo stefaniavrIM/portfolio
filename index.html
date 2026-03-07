@@ -19,7 +19,7 @@
   --border: rgba(255,255,255,0.07);
   --serif: 'Instrument Serif', Georgia, serif;
   --sans: 'DM Sans', system-ui, sans-serif;
-  --pad: clamp(24px, 5vw, 64px);
+  --pad: clamp(20px, 5vw, 64px);
 }
 
 html { scroll-behavior: smooth; }
@@ -31,11 +31,12 @@ body {
   font-size: 15px;
   line-height: 1.6;
   -webkit-font-smoothing: antialiased;
+  overflow-x: hidden;
 }
 
 /* ═══ HEADER ═══ */
 header {
-  padding: 24px var(--pad);
+  padding: 16px var(--pad);
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -50,13 +51,13 @@ header {
 
 .logo {
   font-family: var(--serif);
-  font-size: 1.3rem;
+  font-size: clamp(1.05rem, 3vw, 1.3rem);
   color: var(--text);
   text-decoration: none;
   cursor: pointer;
 }
 
-nav { display: flex; gap: 28px; }
+nav { display: flex; gap: clamp(16px, 4vw, 28px); }
 
 nav a {
   font-size: 0.82rem;
@@ -76,10 +77,10 @@ nav a:hover, nav a.active { color: var(--text); }
 
 /* ═══ HOME: CATEGORY GRID ═══ */
 .cat-grid {
-  padding: 24px var(--pad) 80px;
+  padding: 20px var(--pad) 60px;
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  gap: 20px;
+  gap: 16px;
 }
 
 .cat-tile {
@@ -114,19 +115,19 @@ nav a:hover, nav a.active { color: var(--text); }
 
 .cat-tile:hover .cat-thumb img { transform: scale(1.04); }
 
-.cat-info { padding: 16px 18px 18px; }
+.cat-info { padding: 14px 16px 16px; }
 
 .cat-title {
   font-family: var(--serif);
-  font-size: 1.25rem;
+  font-size: clamp(1rem, 2.5vw, 1.25rem);
   font-weight: 400;
 }
 
 .cat-count {
-  font-size: 0.72rem;
+  font-size: 0.7rem;
   color: var(--text-dim);
   letter-spacing: 0.06em;
-  margin-top: 3px;
+  margin-top: 2px;
 }
 
 /* ═══ BACK LINK ═══ */
@@ -137,7 +138,7 @@ nav a:hover, nav a.active { color: var(--text); }
   font-size: 0.82rem;
   color: var(--text-dim);
   text-decoration: none;
-  padding: 32px var(--pad) 12px;
+  padding: 28px var(--pad) 12px;
   transition: color 0.25s;
   cursor: pointer;
 }
@@ -151,21 +152,19 @@ nav a:hover, nav a.active { color: var(--text); }
 }
 
 /* ═══ CATEGORY PAGE: PROJECT CARDS ═══ */
-.cat-page-header {
-  padding: 8px var(--pad) 28px;
-}
+.cat-page-header { padding: 8px var(--pad) 24px; }
 
 .cat-page-header h1 {
   font-family: var(--serif);
-  font-size: clamp(1.8rem, 3.5vw, 2.8rem);
+  font-size: clamp(1.5rem, 4vw, 2.8rem);
   font-weight: 400;
 }
 
 .proj-grid {
-  padding: 0 var(--pad) 80px;
+  padding: 0 var(--pad) 60px;
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-  gap: 20px;
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  gap: 16px;
 }
 
 .proj-card {
@@ -197,11 +196,11 @@ nav a:hover, nav a.active { color: var(--text); }
 
 .proj-card:hover .proj-card-thumb img { transform: scale(1.04); }
 
-.proj-card-info { padding: 14px 16px 16px; }
+.proj-card-info { padding: 12px 14px 14px; }
 
 .proj-card-title {
   font-family: var(--serif);
-  font-size: 1.05rem;
+  font-size: clamp(0.9rem, 2vw, 1.05rem);
   font-weight: 400;
 }
 
@@ -212,23 +211,21 @@ nav a:hover, nav a.active { color: var(--text); }
 }
 
 /* ═══ PROJECT PAGE: STACKED IMAGES ═══ */
-.proj-header {
-  padding: 8px var(--pad) 24px;
-}
+.proj-header { padding: 8px var(--pad) 20px; }
 
 .proj-header h1 {
   font-family: var(--serif);
-  font-size: clamp(1.6rem, 3vw, 2.4rem);
+  font-size: clamp(1.4rem, 3.5vw, 2.4rem);
   font-weight: 400;
 }
 
 .proj-header .proj-card-sub { margin-top: 6px; font-size: 0.76rem; }
 
 .proj-images {
-  padding: 0 var(--pad) 80px;
+  padding: 0 var(--pad) 60px;
   display: flex;
   flex-direction: column;
-  gap: 12px;
+  gap: 10px;
   max-width: 1100px;
 }
 
@@ -261,7 +258,7 @@ nav a:hover, nav a.active { color: var(--text); }
 .lightbox.open { opacity: 1; pointer-events: all; }
 
 .lightbox img {
-  max-width: 92vw; max-height: 90vh;
+  max-width: 94vw; max-height: 90vh;
   object-fit: contain; border-radius: 3px;
   transform: scale(0.96);
   transition: transform 0.35s cubic-bezier(0.22,1,0.36,1);
@@ -270,10 +267,10 @@ nav a:hover, nav a.active { color: var(--text); }
 .lightbox.open img { transform: scale(1); }
 
 .lightbox-close {
-  position: absolute; top: 18px; right: 22px;
+  position: absolute; top: 12px; right: 14px;
   background: none; border: none;
-  color: var(--text-dim); font-size: 1.6rem;
-  cursor: pointer; width: 44px; height: 44px;
+  color: var(--text-dim); font-size: 1.8rem;
+  cursor: pointer; width: 48px; height: 48px;
   display: flex; align-items: center; justify-content: center;
   transition: color 0.2s; z-index: 10;
 }
@@ -292,38 +289,35 @@ nav a:hover, nav a.active { color: var(--text); }
 }
 
 .lb-nav:hover { background: rgba(255,255,255,0.12); color: var(--text); }
-.lb-prev { left: 18px; }
-.lb-next { right: 18px; }
+.lb-prev { left: 12px; }
+.lb-next { right: 12px; }
 
 /* ═══ ABOUT ═══ */
 .about-content {
-  padding: 48px var(--pad) 80px;
+  padding: 40px var(--pad) 60px;
   max-width: 820px;
 }
 
 .about-content h1 {
   font-family: var(--serif);
-  font-size: clamp(2rem, 4vw, 3rem);
-  font-weight: 400; margin-bottom: 2rem;
+  font-size: clamp(1.8rem, 4vw, 3rem);
+  font-weight: 400; margin-bottom: 1.5rem;
 }
 
 .about-row {
   display: flex;
-  gap: 40px;
+  gap: 32px;
   align-items: flex-start;
 }
 
 .about-photo {
-  width: 180px;
-  min-width: 180px;
+  width: 160px;
+  min-width: 160px;
   border-radius: 6px;
   overflow: hidden;
 }
 
-.about-photo img {
-  width: 100%;
-  display: block;
-}
+.about-photo img { width: 100%; display: block; }
 
 .about-text p {
   color: var(--text-dim); font-size: 0.95rem;
@@ -338,14 +332,9 @@ nav a:hover, nav a.active { color: var(--text); }
 
 .about-text a:hover { border-color: var(--accent); }
 
-@media (max-width: 600px) {
-  .about-row { flex-direction: column; gap: 24px; }
-  .about-photo { width: 140px; min-width: 140px; }
-}
-
 /* ═══ FOOTER ═══ */
 footer {
-  padding: 28px var(--pad);
+  padding: 24px var(--pad);
   border-top: 1px solid var(--border);
   display: flex; justify-content: space-between;
   align-items: center; flex-wrap: wrap; gap: 12px;
@@ -364,9 +353,22 @@ footer span { color: var(--text-dim); font-size: 0.76rem; }
 
 /* ═══ RESPONSIVE ═══ */
 @media (max-width: 768px) {
-  .cat-grid { grid-template-columns: 1fr; }
+  .cat-grid { grid-template-columns: 1fr; gap: 14px; }
   .proj-grid { grid-template-columns: 1fr; }
   .lb-nav { display: none; }
+  .about-row { flex-direction: column; gap: 20px; }
+  .about-photo { width: 120px; min-width: 120px; }
+}
+
+@media (min-width: 769px) and (max-width: 1024px) {
+  .proj-grid { grid-template-columns: repeat(2, 1fr); }
+}
+
+/* touch-friendly tap targets */
+@media (hover: none) {
+  .cat-tile:active { transform: scale(0.98); }
+  .proj-card:active { transform: scale(0.98); }
+  .img-wrap:active { opacity: 0.9; }
 }
 
 @keyframes fadeIn {
@@ -384,100 +386,55 @@ footer span { color: var(--text-dim); font-size: 0.76rem; }
   </nav>
 </header>
 
-<!-- ══════════════════════════════════════════
-     LEVEL 1 — HOME (category tiles)
-     ══════════════════════════════════════════ -->
+<!-- ════════ HOME ════════ -->
 <main class="page active" id="pg-home">
   <div class="cat-grid">
-
     <a class="cat-tile" data-goto="cat-characters">
-      <div class="cat-thumb"><img src="images/stefania-avramidi-nurse-tech-sml.webp" alt="Characters" style="object-position: center 20%;"></div>
-      <div class="cat-info">
-        <div class="cat-title">Character Design</div>
-        <div class="cat-count">7 projects</div>
-      </div>
+      <div class="cat-thumb"><img src="images/stefania-avramidi-nurse-tech-sml.webp" alt="Character Design" style="object-position: center 20%;"></div>
+      <div class="cat-info"><div class="cat-title">Character Design</div><div class="cat-count">7 projects</div></div>
     </a>
-
     <a class="cat-tile" data-goto="cat-game-art">
-      <div class="cat-thumb"><img src="images/stefania-avramidi-final-s.jpg" alt="Game Art"></div>
-      <div class="cat-info">
-        <div class="cat-title">Mobile Game Art</div>
-        <div class="cat-count">2 projects</div>
-      </div>
+      <div class="cat-thumb"><img src="images/stefania-avramidi-final-s.jpg" alt="Mobile Game Art"></div>
+      <div class="cat-info"><div class="cat-title">Mobile Game Art</div><div class="cat-count">5 projects</div></div>
     </a>
-
     <a class="cat-tile" data-goto="cat-props">
       <div class="cat-thumb"><img src="images/stefania-avramidi-arcade-concept.jpg" alt="Props"></div>
-      <div class="cat-info">
-        <div class="cat-title">Props</div>
-        <div class="cat-count">4 projects</div>
-      </div>
+      <div class="cat-info"><div class="cat-title">Props</div><div class="cat-count">4 projects</div></div>
     </a>
-
     <a class="cat-tile" data-goto="cat-sketches">
-      <div class="cat-thumb"><img src="images/stefania-avramidi-tech-arms-stefania-avramidi-small-1.jpg" alt="Sketches &amp; Thumbnails"></div>
-      <div class="cat-info">
-        <div class="cat-title">Sketches &amp; Thumbnails</div>
-        <div class="cat-count">10 pieces</div>
-      </div>
+      <div class="cat-thumb"><img src="images/stefania-avramidi-exercise-1-final-copy.jpg" alt="Sketches &amp; Thumbnails"></div>
+      <div class="cat-info"><div class="cat-title">Sketches &amp; Thumbnails</div><div class="cat-count">10 pieces</div></div>
     </a>
-
   </div>
 </main>
 
-<!-- ══════════════════════════════════════════
-     LEVEL 2 — CATEGORY PAGES (project cards)
-     ══════════════════════════════════════════ -->
+<!-- ════════ LEVEL 2: CATEGORIES ════════ -->
 
-<!-- CHARACTERS -->
+<!-- CHARACTER DESIGN -->
 <div class="page" id="pg-cat-characters">
   <a class="back-link" data-goto="home"><svg viewBox="0 0 24 24"><polyline points="15 18 9 12 15 6"/></svg>Work</a>
   <div class="cat-page-header"><h1>Character Design</h1></div>
   <div class="proj-grid">
-    <div class="proj-card" data-goto="proj-nurse">
-      <div class="proj-card-thumb"><img src="images/stefania-avramidi-nurse-tech-sml.webp" alt="Nurse Tech"></div>
-      <div class="proj-card-info"><div class="proj-card-title">Nurse Tech</div><div class="proj-card-sub">4 images</div></div>
-    </div>
-    <div class="proj-card" data-goto="proj-magical-girl">
-      <div class="proj-card-thumb"><img src="images/stefania-avramidi-magical-girl-1.webp" alt="Magical Girl"></div>
-      <div class="proj-card-info"><div class="proj-card-title">Magical Girl</div><div class="proj-card-sub">2 images</div></div>
-    </div>
-    <div class="proj-card" data-goto="proj-kaito">
-      <div class="proj-card-thumb"><img src="images/stefania-avramidi-kaito-exploration-small.jpg" alt="Kaito"></div>
-      <div class="proj-card-info"><div class="proj-card-title">Kaito</div><div class="proj-card-sub">2 images</div></div>
-    </div>
-    <div class="proj-card" data-goto="proj-fox-wizard">
-      <div class="proj-card-thumb"><img src="images/stefania-avramidi-fox-wizard.jpg" alt="Fox Wizard"></div>
-      <div class="proj-card-info"><div class="proj-card-title">Fox Wizard</div><div class="proj-card-sub">2 images</div></div>
-    </div>
-    <div class="proj-card" data-goto="proj-izzy">
-      <div class="proj-card-thumb"><img src="images/stefania-avramidi-izzy-updated.webp" alt="Izzy"></div>
-      <div class="proj-card-info"><div class="proj-card-title">Izzy</div><div class="proj-card-sub">2 images</div></div>
-    </div>
-    <div class="proj-card" data-goto="proj-quinn">
-      <div class="proj-card-thumb"><img src="images/stefania-avramidi-quinn-stefania-avramidi-small.jpg" alt="Quinn"></div>
-      <div class="proj-card-info"><div class="proj-card-title">Quinn</div><div class="proj-card-sub">1 image</div></div>
-    </div>
-    <div class="proj-card" data-goto="proj-genji">
-      <div class="proj-card-thumb"><img src="images/stefania-avramidi-final-genji-lower-res.jpg" alt="Genji — Corrupted Monk"></div>
-      <div class="proj-card-info"><div class="proj-card-title">Genji — Corrupted Monk</div><div class="proj-card-sub">4 images</div></div>
-    </div>
+    <div class="proj-card" data-goto="proj-nurse"><div class="proj-card-thumb"><img src="images/stefania-avramidi-nurse-tech-sml.webp" alt="Nurse Tech"></div><div class="proj-card-info"><div class="proj-card-title">Nurse Tech</div><div class="proj-card-sub">4 images</div></div></div>
+    <div class="proj-card" data-goto="proj-magical-girl"><div class="proj-card-thumb"><img src="images/stefania-avramidi-magical-girl-1.webp" alt="Magical Girl"></div><div class="proj-card-info"><div class="proj-card-title">Magical Girl</div><div class="proj-card-sub">2 images</div></div></div>
+    <div class="proj-card" data-goto="proj-kaito"><div class="proj-card-thumb"><img src="images/stefania-avramidi-kaito-exploration-small.jpg" alt="Kaito"></div><div class="proj-card-info"><div class="proj-card-title">Kaito</div><div class="proj-card-sub">2 images</div></div></div>
+    <div class="proj-card" data-goto="proj-fox-wizard"><div class="proj-card-thumb"><img src="images/stefania-avramidi-fox-wizard.jpg" alt="Fox Wizard"></div><div class="proj-card-info"><div class="proj-card-title">Fox Wizard</div><div class="proj-card-sub">2 images</div></div></div>
+    <div class="proj-card" data-goto="proj-izzy"><div class="proj-card-thumb"><img src="images/stefania-avramidi-izzy-updated.webp" alt="Izzy"></div><div class="proj-card-info"><div class="proj-card-title">Izzy</div><div class="proj-card-sub">2 images</div></div></div>
+    <div class="proj-card" data-goto="proj-quinn"><div class="proj-card-thumb"><img src="images/stefania-avramidi-quinn-stefania-avramidi-small.jpg" alt="Quinn"></div><div class="proj-card-info"><div class="proj-card-title">Quinn</div><div class="proj-card-sub">1 image</div></div></div>
+    <div class="proj-card" data-goto="proj-genji"><div class="proj-card-thumb"><img src="images/stefania-avramidi-final-genji-lower-res.jpg" alt="Genji — Corrupted Monk"></div><div class="proj-card-info"><div class="proj-card-title">Genji — Corrupted Monk</div><div class="proj-card-sub">4 images</div></div></div>
   </div>
 </div>
 
-<!-- GAME ART -->
+<!-- MOBILE GAME ART -->
 <div class="page" id="pg-cat-game-art">
   <a class="back-link" data-goto="home"><svg viewBox="0 0 24 24"><polyline points="15 18 9 12 15 6"/></svg>Work</a>
   <div class="cat-page-header"><h1>Mobile Game Art</h1></div>
   <div class="proj-grid">
-    <div class="proj-card" data-goto="proj-firestone-keyart">
-      <div class="proj-card-thumb"><img src="images/stefania-avramidi-final-s.jpg" alt="Firestone — Key Art"></div>
-      <div class="proj-card-info"><div class="proj-card-title">Firestone — Key Art</div><div class="proj-card-sub">2 images</div></div>
-    </div>
-    <div class="proj-card" data-goto="proj-firestone-assets">
-      <div class="proj-card-thumb"><img src="images/stefania-avramidi-stefania-avramidi-elementals-copy.jpg" alt="Firestone — Game Assets"></div>
-      <div class="proj-card-info"><div class="proj-card-title">Firestone — Game Assets</div><div class="proj-card-sub">6 images</div></div>
-    </div>
+    <div class="proj-card" data-goto="proj-firestone-keyart"><div class="proj-card-thumb"><img src="images/stefania-avramidi-final-s.jpg" alt="Key Art"></div><div class="proj-card-info"><div class="proj-card-title">Key Art</div><div class="proj-card-sub">2 images</div></div></div>
+    <div class="proj-card" data-goto="proj-firestone-chars"><div class="proj-card-thumb"><img src="images/stefania-avramidi-stefania-avramidi-elementals-copy.jpg" alt="Characters"></div><div class="proj-card-info"><div class="proj-card-title">Characters</div><div class="proj-card-sub">3 images</div></div></div>
+    <div class="proj-card" data-goto="proj-firestone-avatars"><div class="proj-card-thumb"><img src="images/stefania-avramidi-stefania-avramidi-untitled-1.jpg" alt="Halloween Avatars"></div><div class="proj-card-info"><div class="proj-card-title">Halloween Avatars</div><div class="proj-card-sub">1 image</div></div></div>
+    <div class="proj-card" data-goto="proj-firestone-items"><div class="proj-card-thumb"><img src="images/stefania-avramidi-stefania-avramidi-stefania-avramidi-artifacts.jpg" alt="Items &amp; Artifacts"></div><div class="proj-card-info"><div class="proj-card-title">Items &amp; Artifacts</div><div class="proj-card-sub">1 image</div></div></div>
+    <div class="proj-card" data-goto="proj-firestone-buildings"><div class="proj-card-thumb"><img src="images/stefania-avramidi-stefania-avramidi-buildings.jpg" alt="Buildings"></div><div class="proj-card-info"><div class="proj-card-title">Buildings</div><div class="proj-card-sub">1 image</div></div></div>
   </div>
 </div>
 
@@ -486,27 +443,14 @@ footer span { color: var(--text-dim); font-size: 0.76rem; }
   <a class="back-link" data-goto="home"><svg viewBox="0 0 24 24"><polyline points="15 18 9 12 15 6"/></svg>Work</a>
   <div class="cat-page-header"><h1>Props</h1></div>
   <div class="proj-grid">
-    <div class="proj-card" data-goto="proj-arcade">
-      <div class="proj-card-thumb"><img src="images/stefania-avramidi-arcade-concept.jpg" alt="Arcade Machine"></div>
-      <div class="proj-card-info"><div class="proj-card-title">Arcade Machine</div><div class="proj-card-sub">3 images</div></div>
-    </div>
-    <div class="proj-card" data-goto="proj-cooler">
-      <div class="proj-card-thumb"><img src="images/stefania-avramidi-cooler-render.jpg" alt="Cooler"></div>
-      <div class="proj-card-info"><div class="proj-card-title">Cooler</div><div class="proj-card-sub">3 images</div></div>
-    </div>
-    <div class="proj-card" data-goto="proj-sci-fi-crates">
-      <div class="proj-card-thumb"><img src="images/stefania-avramidi-3-sci-fi-boxes-small.jpg" alt="Sci-Fi Crates"></div>
-      <div class="proj-card-info"><div class="proj-card-title">Sci-Fi Crates</div><div class="proj-card-sub">1 image</div></div>
-    </div>
-    <div class="proj-card" data-goto="proj-egg-cooker">
-      <div class="proj-card-thumb"><img src="images/stefania-avramidi-birby-egg-cooker-lower-res.jpg" alt="Birby Egg Cooker"></div>
-      <div class="proj-card-info"><div class="proj-card-title">Birby Egg Cooker</div><div class="proj-card-sub">1 image</div></div>
-    </div>
+    <div class="proj-card" data-goto="proj-arcade"><div class="proj-card-thumb"><img src="images/stefania-avramidi-arcade-concept.jpg" alt="Arcade Machine"></div><div class="proj-card-info"><div class="proj-card-title">Arcade Machine</div><div class="proj-card-sub">3 images</div></div></div>
+    <div class="proj-card" data-goto="proj-cooler"><div class="proj-card-thumb"><img src="images/stefania-avramidi-cooler-render.jpg" alt="Cooler"></div><div class="proj-card-info"><div class="proj-card-title">Cooler</div><div class="proj-card-sub">3 images</div></div></div>
+    <div class="proj-card" data-goto="proj-sci-fi-crates"><div class="proj-card-thumb"><img src="images/stefania-avramidi-3-sci-fi-boxes-small.jpg" alt="Sci-Fi Crates"></div><div class="proj-card-info"><div class="proj-card-title">Sci-Fi Crates</div><div class="proj-card-sub">1 image</div></div></div>
+    <div class="proj-card" data-goto="proj-egg-cooker"><div class="proj-card-thumb"><img src="images/stefania-avramidi-birby-egg-cooker-lower-res.jpg" alt="Birby Egg Cooker"></div><div class="proj-card-info"><div class="proj-card-title">Birby Egg Cooker</div><div class="proj-card-sub">1 image</div></div></div>
   </div>
 </div>
 
-<!-- FAN ART -->
-<!-- SKETCHES (no sub-projects, goes straight to stacked images) -->
+<!-- SKETCHES -->
 <div class="page" id="pg-cat-sketches">
   <a class="back-link" data-goto="home"><svg viewBox="0 0 24 24"><polyline points="15 18 9 12 15 6"/></svg>Work</a>
   <div class="proj-header"><h1>Sketches &amp; Thumbnails</h1></div>
@@ -523,12 +467,10 @@ footer span { color: var(--text-dim); font-size: 0.76rem; }
   </div>
 </div>
 
-<!-- ══════════════════════════════════════════
-     LEVEL 3 — PROJECT PAGES (stacked images)
-     ══════════════════════════════════════════ -->
+<!-- ════════ LEVEL 3: PROJECTS ════════ -->
 
 <!-- NURSE TECH -->
-<div class="page" id="pg-proj-nurse" data-parent="cat-characters">
+<div class="page" id="pg-proj-nurse">
   <a class="back-link" data-goto="cat-characters"><svg viewBox="0 0 24 24"><polyline points="15 18 9 12 15 6"/></svg>Character Design</a>
   <div class="proj-header"><h1>Nurse Tech</h1><div class="proj-card-sub">Character Design</div></div>
   <div class="proj-images" data-gallery>
@@ -540,7 +482,7 @@ footer span { color: var(--text-dim); font-size: 0.76rem; }
 </div>
 
 <!-- MAGICAL GIRL -->
-<div class="page" id="pg-proj-magical-girl" data-parent="cat-characters">
+<div class="page" id="pg-proj-magical-girl">
   <a class="back-link" data-goto="cat-characters"><svg viewBox="0 0 24 24"><polyline points="15 18 9 12 15 6"/></svg>Character Design</a>
   <div class="proj-header"><h1>Magical Girl</h1><div class="proj-card-sub">Character Design</div></div>
   <div class="proj-images" data-gallery>
@@ -550,7 +492,7 @@ footer span { color: var(--text-dim); font-size: 0.76rem; }
 </div>
 
 <!-- KAITO -->
-<div class="page" id="pg-proj-kaito" data-parent="cat-characters">
+<div class="page" id="pg-proj-kaito">
   <a class="back-link" data-goto="cat-characters"><svg viewBox="0 0 24 24"><polyline points="15 18 9 12 15 6"/></svg>Character Design</a>
   <div class="proj-header"><h1>Kaito</h1><div class="proj-card-sub">Character Design</div></div>
   <div class="proj-images" data-gallery>
@@ -560,7 +502,7 @@ footer span { color: var(--text-dim); font-size: 0.76rem; }
 </div>
 
 <!-- FOX WIZARD -->
-<div class="page" id="pg-proj-fox-wizard" data-parent="cat-characters">
+<div class="page" id="pg-proj-fox-wizard">
   <a class="back-link" data-goto="cat-characters"><svg viewBox="0 0 24 24"><polyline points="15 18 9 12 15 6"/></svg>Character Design</a>
   <div class="proj-header"><h1>Fox Wizard</h1><div class="proj-card-sub">Character Design</div></div>
   <div class="proj-images" data-gallery>
@@ -570,7 +512,7 @@ footer span { color: var(--text-dim); font-size: 0.76rem; }
 </div>
 
 <!-- IZZY -->
-<div class="page" id="pg-proj-izzy" data-parent="cat-characters">
+<div class="page" id="pg-proj-izzy">
   <a class="back-link" data-goto="cat-characters"><svg viewBox="0 0 24 24"><polyline points="15 18 9 12 15 6"/></svg>Character Design</a>
   <div class="proj-header"><h1>Izzy</h1><div class="proj-card-sub">Character Design</div></div>
   <div class="proj-images" data-gallery>
@@ -580,80 +522,16 @@ footer span { color: var(--text-dim); font-size: 0.76rem; }
 </div>
 
 <!-- QUINN -->
-<div class="page" id="pg-proj-quinn" data-parent="cat-characters">
+<div class="page" id="pg-proj-quinn">
   <a class="back-link" data-goto="cat-characters"><svg viewBox="0 0 24 24"><polyline points="15 18 9 12 15 6"/></svg>Character Design</a>
   <div class="proj-header"><h1>Quinn</h1><div class="proj-card-sub">Character Design</div></div>
   <div class="proj-images" data-gallery>
-    <div class="img-wrap" style="animation-delay:0s"><img src="images/stefania-avramidi-quinn-stefania-avramidi-small.jpg" alt="Quinn — Character Design"></div>
-  </div>
-</div>
-
-<!-- FIRESTONE — KEY ART -->
-<div class="page" id="pg-proj-firestone-keyart" data-parent="cat-game-art">
-  <a class="back-link" data-goto="cat-game-art"><svg viewBox="0 0 24 24"><polyline points="15 18 9 12 15 6"/></svg>Mobile Game Art</a>
-  <div class="proj-header"><h1>Firestone — Key Art</h1><div class="proj-card-sub">Illustration</div></div>
-  <div class="proj-images" data-gallery>
-    <div class="img-wrap" style="animation-delay:0s"><img src="images/stefania-avramidi-final-s.jpg" alt="Firestone — Final Illustration"></div>
-    <div class="img-wrap" style="animation-delay:.08s"><img src="images/stefania-avramidi-lineart-s.jpg" alt="Firestone — Lineart Sketch"></div>
-  </div>
-</div>
-
-<!-- FIRESTONE — GAME ASSETS -->
-<div class="page" id="pg-proj-firestone-assets" data-parent="cat-game-art">
-  <a class="back-link" data-goto="cat-game-art"><svg viewBox="0 0 24 24"><polyline points="15 18 9 12 15 6"/></svg>Mobile Game Art</a>
-  <div class="proj-header"><h1>Firestone — Game Assets</h1><div class="proj-card-sub">Mobile Game Art</div></div>
-  <div class="proj-images" data-gallery>
-    <div class="img-wrap" style="animation-delay:0s"><img src="images/stefania-avramidi-stefania-avramidi-elementals-copy.jpg" alt="Elemental Characters"></div>
-    <div class="img-wrap" style="animation-delay:.08s"><img src="images/stefania-avramidi-stefania-avramidi-solaine-copy.jpg" alt="Solaine"></div>
-    <div class="img-wrap" style="animation-delay:.16s"><img src="images/stefania-avramidi-stefania-avramidi-posting.jpg" alt="Character Poses"></div>
-    <div class="img-wrap" style="animation-delay:.24s"><img src="images/stefania-avramidi-stefania-avramidi-untitled-1.jpg" alt="Character Design"></div>
-    <div class="img-wrap" style="animation-delay:.32s"><img src="images/stefania-avramidi-stefania-avramidi-stefania-avramidi-artifacts.jpg" alt="Items & Artifacts"></div>
-    <div class="img-wrap" style="animation-delay:.4s"><img src="images/stefania-avramidi-stefania-avramidi-buildings.jpg" alt="Buildings"></div>
-  </div>
-</div>
-
-<!-- ARCADE MACHINE -->
-<div class="page" id="pg-proj-arcade" data-parent="cat-props">
-  <a class="back-link" data-goto="cat-props"><svg viewBox="0 0 24 24"><polyline points="15 18 9 12 15 6"/></svg>Props</a>
-  <div class="proj-header"><h1>Arcade Machine</h1><div class="proj-card-sub">Prop Design</div></div>
-  <div class="proj-images" data-gallery>
-    <div class="img-wrap" style="animation-delay:0s"><img src="images/stefania-avramidi-arcade-concept.jpg" alt="Arcade Machine — Concept"></div>
-    <div class="img-wrap" style="animation-delay:.08s"><img src="images/stefania-avramidi-arcade-ref.jpg" alt="Arcade Machine — Reference Sheet"></div>
-    <div class="img-wrap" style="animation-delay:.16s"><img src="images/stefania-avramidi-arcade-sketches.jpg" alt="Arcade Machine — Sketches"></div>
-  </div>
-</div>
-
-<!-- COOLER -->
-<div class="page" id="pg-proj-cooler" data-parent="cat-props">
-  <a class="back-link" data-goto="cat-props"><svg viewBox="0 0 24 24"><polyline points="15 18 9 12 15 6"/></svg>Props</a>
-  <div class="proj-header"><h1>Cooler</h1><div class="proj-card-sub">Prop Design</div></div>
-  <div class="proj-images" data-gallery>
-    <div class="img-wrap" style="animation-delay:0s"><img src="images/stefania-avramidi-cooler-render.jpg" alt="Cooler — Render"></div>
-    <div class="img-wrap" style="animation-delay:.08s"><img src="images/stefania-avramidi-cooler-ref.jpg" alt="Cooler — Reference Sheet"></div>
-    <div class="img-wrap" style="animation-delay:.16s"><img src="images/stefania-avramidi-cooler-sketches.jpg" alt="Cooler — Sketches"></div>
-  </div>
-</div>
-
-<!-- SCI-FI CRATES -->
-<div class="page" id="pg-proj-sci-fi-crates" data-parent="cat-props">
-  <a class="back-link" data-goto="cat-props"><svg viewBox="0 0 24 24"><polyline points="15 18 9 12 15 6"/></svg>Props</a>
-  <div class="proj-header"><h1>Sci-Fi Crates</h1><div class="proj-card-sub">Prop Design</div></div>
-  <div class="proj-images" data-gallery>
-    <div class="img-wrap" style="animation-delay:0s"><img src="images/stefania-avramidi-3-sci-fi-boxes-small.jpg" alt="Sci-Fi Crates"></div>
-  </div>
-</div>
-
-<!-- EGG COOKER -->
-<div class="page" id="pg-proj-egg-cooker" data-parent="cat-props">
-  <a class="back-link" data-goto="cat-props"><svg viewBox="0 0 24 24"><polyline points="15 18 9 12 15 6"/></svg>Props</a>
-  <div class="proj-header"><h1>Birby Egg Cooker</h1><div class="proj-card-sub">Prop Design</div></div>
-  <div class="proj-images" data-gallery>
-    <div class="img-wrap" style="animation-delay:0s"><img src="images/stefania-avramidi-birby-egg-cooker-lower-res.jpg" alt="Birby Egg Cooker"></div>
+    <div class="img-wrap" style="animation-delay:0s"><img src="images/stefania-avramidi-quinn-stefania-avramidi-small.jpg" alt="Quinn"></div>
   </div>
 </div>
 
 <!-- GENJI -->
-<div class="page" id="pg-proj-genji" data-parent="cat-characters">
+<div class="page" id="pg-proj-genji">
   <a class="back-link" data-goto="cat-characters"><svg viewBox="0 0 24 24"><polyline points="15 18 9 12 15 6"/></svg>Character Design</a>
   <div class="proj-header"><h1>Genji — Corrupted Monk</h1><div class="proj-card-sub">Fan Skin Concept</div></div>
   <div class="proj-images" data-gallery>
@@ -664,16 +542,100 @@ footer span { color: var(--text-dim); font-size: 0.76rem; }
   </div>
 </div>
 
-<!-- ══════════════════════════════════════════ -->
+<!-- FIRESTONE — KEY ART -->
+<div class="page" id="pg-proj-firestone-keyart">
+  <a class="back-link" data-goto="cat-game-art"><svg viewBox="0 0 24 24"><polyline points="15 18 9 12 15 6"/></svg>Mobile Game Art</a>
+  <div class="proj-header"><h1>Key Art</h1><div class="proj-card-sub">Illustration</div></div>
+  <div class="proj-images" data-gallery>
+    <div class="img-wrap" style="animation-delay:0s"><img src="images/stefania-avramidi-final-s.jpg" alt="Firestone — Final"></div>
+    <div class="img-wrap" style="animation-delay:.08s"><img src="images/stefania-avramidi-lineart-s.jpg" alt="Firestone — Lineart"></div>
+  </div>
+</div>
+
+<!-- FIRESTONE — CHARACTERS -->
+<div class="page" id="pg-proj-firestone-chars">
+  <a class="back-link" data-goto="cat-game-art"><svg viewBox="0 0 24 24"><polyline points="15 18 9 12 15 6"/></svg>Mobile Game Art</a>
+  <div class="proj-header"><h1>Characters</h1><div class="proj-card-sub">Game Characters</div></div>
+  <div class="proj-images" data-gallery>
+    <div class="img-wrap" style="animation-delay:0s"><img src="images/stefania-avramidi-stefania-avramidi-elementals-copy.jpg" alt="Elementals"></div>
+    <div class="img-wrap" style="animation-delay:.08s"><img src="images/stefania-avramidi-stefania-avramidi-solaine-copy.jpg" alt="Solaine"></div>
+    <div class="img-wrap" style="animation-delay:.16s"><img src="images/stefania-avramidi-stefania-avramidi-posting.jpg" alt="Crystal Mage"></div>
+  </div>
+</div>
+
+<!-- FIRESTONE — HALLOWEEN AVATARS -->
+<div class="page" id="pg-proj-firestone-avatars">
+  <a class="back-link" data-goto="cat-game-art"><svg viewBox="0 0 24 24"><polyline points="15 18 9 12 15 6"/></svg>Mobile Game Art</a>
+  <div class="proj-header"><h1>Halloween Avatars</h1><div class="proj-card-sub">Avatar Icons</div></div>
+  <div class="proj-images" data-gallery>
+    <div class="img-wrap" style="animation-delay:0s"><img src="images/stefania-avramidi-stefania-avramidi-untitled-1.jpg" alt="Halloween Avatars"></div>
+  </div>
+</div>
+
+<!-- FIRESTONE — ITEMS -->
+<div class="page" id="pg-proj-firestone-items">
+  <a class="back-link" data-goto="cat-game-art"><svg viewBox="0 0 24 24"><polyline points="15 18 9 12 15 6"/></svg>Mobile Game Art</a>
+  <div class="proj-header"><h1>Items &amp; Artifacts</h1><div class="proj-card-sub">Game Items</div></div>
+  <div class="proj-images" data-gallery>
+    <div class="img-wrap" style="animation-delay:0s"><img src="images/stefania-avramidi-stefania-avramidi-stefania-avramidi-artifacts.jpg" alt="Items & Artifacts"></div>
+  </div>
+</div>
+
+<!-- FIRESTONE — BUILDINGS -->
+<div class="page" id="pg-proj-firestone-buildings">
+  <a class="back-link" data-goto="cat-game-art"><svg viewBox="0 0 24 24"><polyline points="15 18 9 12 15 6"/></svg>Mobile Game Art</a>
+  <div class="proj-header"><h1>Buildings</h1><div class="proj-card-sub">Environment Art</div></div>
+  <div class="proj-images" data-gallery>
+    <div class="img-wrap" style="animation-delay:0s"><img src="images/stefania-avramidi-stefania-avramidi-buildings.jpg" alt="Buildings"></div>
+  </div>
+</div>
+
+<!-- ARCADE -->
+<div class="page" id="pg-proj-arcade">
+  <a class="back-link" data-goto="cat-props"><svg viewBox="0 0 24 24"><polyline points="15 18 9 12 15 6"/></svg>Props</a>
+  <div class="proj-header"><h1>Arcade Machine</h1><div class="proj-card-sub">Prop Design</div></div>
+  <div class="proj-images" data-gallery>
+    <div class="img-wrap" style="animation-delay:0s"><img src="images/stefania-avramidi-arcade-concept.jpg" alt="Arcade Machine — Concept"></div>
+    <div class="img-wrap" style="animation-delay:.08s"><img src="images/stefania-avramidi-arcade-ref.jpg" alt="Arcade Machine — Reference Sheet"></div>
+    <div class="img-wrap" style="animation-delay:.16s"><img src="images/stefania-avramidi-arcade-sketches.jpg" alt="Arcade Machine — Sketches"></div>
+  </div>
+</div>
+
+<!-- COOLER -->
+<div class="page" id="pg-proj-cooler">
+  <a class="back-link" data-goto="cat-props"><svg viewBox="0 0 24 24"><polyline points="15 18 9 12 15 6"/></svg>Props</a>
+  <div class="proj-header"><h1>Cooler</h1><div class="proj-card-sub">Prop Design</div></div>
+  <div class="proj-images" data-gallery>
+    <div class="img-wrap" style="animation-delay:0s"><img src="images/stefania-avramidi-cooler-render.jpg" alt="Cooler — Render"></div>
+    <div class="img-wrap" style="animation-delay:.08s"><img src="images/stefania-avramidi-cooler-ref.jpg" alt="Cooler — Reference Sheet"></div>
+    <div class="img-wrap" style="animation-delay:.16s"><img src="images/stefania-avramidi-cooler-sketches.jpg" alt="Cooler — Sketches"></div>
+  </div>
+</div>
+
+<!-- SCI-FI CRATES -->
+<div class="page" id="pg-proj-sci-fi-crates">
+  <a class="back-link" data-goto="cat-props"><svg viewBox="0 0 24 24"><polyline points="15 18 9 12 15 6"/></svg>Props</a>
+  <div class="proj-header"><h1>Sci-Fi Crates</h1><div class="proj-card-sub">Prop Design</div></div>
+  <div class="proj-images" data-gallery>
+    <div class="img-wrap" style="animation-delay:0s"><img src="images/stefania-avramidi-3-sci-fi-boxes-small.jpg" alt="Sci-Fi Crates"></div>
+  </div>
+</div>
+
+<!-- EGG COOKER -->
+<div class="page" id="pg-proj-egg-cooker">
+  <a class="back-link" data-goto="cat-props"><svg viewBox="0 0 24 24"><polyline points="15 18 9 12 15 6"/></svg>Props</a>
+  <div class="proj-header"><h1>Birby Egg Cooker</h1><div class="proj-card-sub">Prop Design</div></div>
+  <div class="proj-images" data-gallery>
+    <div class="img-wrap" style="animation-delay:0s"><img src="images/stefania-avramidi-birby-egg-cooker-lower-res.jpg" alt="Birby Egg Cooker"></div>
+  </div>
+</div>
 
 <!-- ABOUT -->
 <div class="page" id="pg-about">
   <div class="about-content">
     <h1>About</h1>
     <div class="about-row">
-      <div class="about-photo">
-        <img src="images/profile.jpg" alt="Stefania Avramidi">
-      </div>
+      <div class="about-photo"><img src="images/profile.jpg" alt="Stefania Avramidi"></div>
       <div class="about-text">
         <p>Concept artist and illustrator with a focus on character design, prop design, and game art. Experienced in creating production-ready assets for mobile and indie games, from early thumbnail exploration through to polished final renders.</p>
         <p>Open to freelance work and studio collaborations.</p>
@@ -701,55 +663,39 @@ footer span { color: var(--text-dim); font-size: 0.76rem; }
 
 <script>
 (() => {
-  /* ── Navigation with browser history ── */
   const pages = document.querySelectorAll('.page');
 
-  function showPage(id, pushHistory) {
+  function showPage(id, push) {
     pages.forEach(p => p.classList.remove('active'));
-    const target = document.getElementById('pg-' + id);
-    if (target) target.classList.add('active');
-
+    const t = document.getElementById('pg-' + id);
+    if (t) t.classList.add('active');
     document.querySelectorAll('nav a').forEach(a => {
       if (a.dataset.goto === 'about') a.classList.toggle('active', id === 'about');
       else a.classList.toggle('active', id !== 'about');
     });
-
     window.scrollTo({ top: 0, behavior: 'instant' });
-
-    if (target) {
-      target.querySelectorAll('.img-wrap').forEach(w => {
-        w.style.animation = 'none'; w.offsetHeight; w.style.animation = '';
-      });
-    }
-
-    // push to browser history so back/forward works
-    if (pushHistory !== false) {
-      const hash = id === 'home' ? '' : '#' + id;
-      history.pushState({ page: id }, '', hash || window.location.pathname);
+    if (t) t.querySelectorAll('.img-wrap').forEach(w => {
+      w.style.animation = 'none'; w.offsetHeight; w.style.animation = '';
+    });
+    if (push !== false) {
+      const h = id === 'home' ? '' : '#' + id;
+      history.pushState({ page: id }, '', h || window.location.pathname);
     }
   }
 
-  // handle browser back/forward
   window.addEventListener('popstate', e => {
-    const id = (e.state && e.state.page) || getPageFromHash() || 'home';
-    showPage(id, false);
+    showPage((e.state && e.state.page) || location.hash.replace('#','') || 'home', false);
   });
 
-  function getPageFromHash() {
-    const h = window.location.hash.replace('#', '');
-    return h || null;
-  }
-
-  // load correct page on first visit (if URL has a hash)
-  const initialPage = getPageFromHash() || 'home';
-  if (initialPage !== 'home') showPage(initialPage, false);
+  const init = location.hash.replace('#','');
+  if (init) showPage(init, false);
 
   document.addEventListener('click', e => {
     const el = e.target.closest('[data-goto]');
     if (el) { e.preventDefault(); showPage(el.dataset.goto); }
   });
 
-  /* ── Lightbox ── */
+  // Lightbox
   const lb = document.getElementById('lightbox');
   const lbImg = lb.querySelector('img');
   let items = [], idx = 0;
@@ -759,18 +705,11 @@ footer span { color: var(--text-dim); font-size: 0.76rem; }
     idx = i; lbImg.src = items[idx].src; lbImg.alt = items[idx].alt;
     lb.classList.add('open'); document.body.style.overflow = 'hidden';
   }
-
   function closeLB() { lb.classList.remove('open'); document.body.style.overflow = ''; }
-
-  function navLB(d) {
-    idx = (idx + d + items.length) % items.length;
-    lbImg.src = items[idx].src; lbImg.alt = items[idx].alt;
-  }
+  function navLB(d) { idx = (idx + d + items.length) % items.length; lbImg.src = items[idx].src; lbImg.alt = items[idx].alt; }
 
   document.querySelectorAll('[data-gallery]').forEach(g => {
-    g.querySelectorAll('.img-wrap').forEach((w, i) => {
-      w.addEventListener('click', () => openLB(g, i));
-    });
+    g.querySelectorAll('.img-wrap').forEach((w, i) => w.addEventListener('click', () => openLB(g, i)));
   });
 
   lb.querySelector('.lightbox-close').addEventListener('click', closeLB);
